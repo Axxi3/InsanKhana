@@ -28,7 +28,7 @@ export default function Payment() {
       }
     } }, []);
   const cardExists= async (id)=>{ 
-    const respo= await fetch ("http://localhost:5000/getcard/"+id,{ 
+    const respo= await fetch ("https://insankhana.onrender.com/getcard/"+id,{ 
     method:"GET"
     })   
     const response=await respo.json()  

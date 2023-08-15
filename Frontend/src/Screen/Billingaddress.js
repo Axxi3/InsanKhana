@@ -23,7 +23,7 @@ export default function Billingaddress() {
   
   const setdata = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/getuserinfo/${id}`);
+      const response = await fetch(`https://insankhana.onrender.com/getuserinfo/${id}`);
       const data = await response.json();
       console.log(data);
      
@@ -77,7 +77,7 @@ export default function Billingaddress() {
     }
 
     console.log(auth)
-    const respo=await fetch("http://localhost:5000/updateuserinfo/"+auth,{ 
+    const respo=await fetch("https://insankhana.onrender.com/updateuserinfo/"+auth,{ 
       method:"PUT" , 
       headers:{ 
         "Content-Type":"application/json"

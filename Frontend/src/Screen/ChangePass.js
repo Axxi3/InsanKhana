@@ -50,7 +50,7 @@ const SubmitHogaya= async (event)=>{
   }
   event.preventDefault();
     try {
-        const response=await fetch("http://localhost:5000/changepassword/"+auth,{ 
+        const response=await fetch("https://insankhana.onrender.com/changepassword/"+auth,{ 
     method:"POST", 
     headers: {
         "Content-Type": "application/json"

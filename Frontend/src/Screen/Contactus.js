@@ -32,7 +32,7 @@ export default function Contactus() {
 const SubmitHogaya=async (e)=>{ 
     e.preventDefault()   
     setload(true)   
-    const exist =await fetch ("http://localhost:5000/postcomplain",{ 
+    const exist =await fetch ("https://insankhana.onrender.com/postcomplain",{ 
       method:"POST", 
       headers:{ 
         "Content-Type":"application/json"

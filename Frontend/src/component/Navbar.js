@@ -8,7 +8,7 @@ export default function (props) {
   const [fooditem,setfooditem]=useState([])  
 
   const  getfooditem= async ()=> { 
-    let getfooditem=await fetch("http://localhost:5000/getfood",{ 
+    let getfooditem=await fetch("https://insankhana.onrender.com/getfood",{ 
     method:"GET"
   })  
  const response=await getfooditem.json()    

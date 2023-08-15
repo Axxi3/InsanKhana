@@ -7,7 +7,7 @@ export default function Fooditems() {
   const [fooditem,setfooditem]=useState([])   
 
   const  getfoodcategory= async ()=> { 
-    let foodCategory=await fetch(`http://localhost:5000/getcategory`,{ 
+    let foodCategory=await fetch(`https://insankhana.onrender.com/getcategory`,{ 
     method:"GET"
   })  
   
@@ -19,7 +19,7 @@ export default function Fooditems() {
 
 
   const  getfooditem= async ()=> { 
-    let fooditem=await fetch("http://localhost:5000/getfood",{ 
+    let fooditem=await fetch("https://insankhana.onrender.com/getfood",{ 
     method:"GET"
   })  
   fooditem=await fooditem.json()  

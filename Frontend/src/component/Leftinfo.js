@@ -11,7 +11,7 @@ export default function Leftinfo() {
         pfp:""
       })  
       const realtoken=async (token)=>{ 
-        let check=await fetch(`http://localhost:5000/search/`+token,{ 
+        let check=await fetch(`https://insankhana.onrender.com/search/`+token,{ 
           method:"GET", 
         })
         const response=await check.json()

@@ -41,7 +41,7 @@ export default function NotwrotePaymentinfo() {
     setload(true);
 
     try {
-      const respo = await fetch("http://localhost:5000/addcard", {
+      const respo = await fetch("https://insankhana.onrender.com/addcard", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

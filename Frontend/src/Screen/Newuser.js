@@ -109,7 +109,7 @@ export default function Newuser() {
         const link= await pfpgenerator()
 await console.log("this is linl",link)  
 
-        const exists = await fetch("http://localhost:5000/userexist",{ 
+        const exists = await fetch("https://insankhana.onrender.com/userexist",{ 
           method:"POST", 
           headers:{ 
             "Content-Type":"application/json"
@@ -131,7 +131,7 @@ await console.log("this is linl",link)
         console.log("Ho gyaya generate")
         console.log(youexist)
 
-        const repose = await fetch("http://localhost:5000/createuser",{   
+        const repose = await fetch("https://insankhana.onrender.com/createuser",{   
           method:"POST",
           headers:{ 
             "Content-Type":"application/json"

@@ -24,7 +24,7 @@ export default function Signup() {
 
   const SubmitHogaya = async (e) => {
     e.preventDefault();
-    const Response = await fetch("http://localhost:5000/loginuser", {
+    const Response = await fetch("https://insankhana.onrender.com/loginuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
