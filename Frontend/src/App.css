@@ -19,7 +19,10 @@ html, body {
   align-self: center;
   
 }
-
+.Loader{ 
+  height: 350px;  
+  width: 350px;
+}
 .Navlist li a {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit the color from the parent */
