@@ -2,8 +2,7 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  BrowserRouter
+  Route
 } from "react-router-dom";
 import './App.css';
 import Home from "./Screen/Home";

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import Card from './Card';
-import CartProducts from './CartProduct';
-export default function (props) {    
+export default function Navbar (props) {    
   const login =props.login 
   const [credentials, setcredentials] = useState("");    
   const [fooditem,setfooditem]=useState([])  
@@ -27,12 +26,12 @@ export default function (props) {
    
   };  
  
-  const optionsData = [
-    {
-      half: "170",
-      full: "300",
-    }
-  ];
+  // const optionsData = [
+  //   {
+  //     half: "170",
+  //     full: "300",
+  //   }
+  // ];
   return (
     <div> 
     <ul className='Navlist'>

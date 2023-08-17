@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useJwt, isExpired, decodeToken } from "react-jwt";
+import {   decodeToken } from "react-jwt";
 import Loading from "./Loading";
 export default function NotwrotePaymentinfo() {
   const [load, setload] = useState(false);
@@ -20,7 +20,7 @@ export default function NotwrotePaymentinfo() {
       // This will still show the previous value of login (useState is asynchronous)
     } else {
       const myDecodedToken = decodeToken(auth);
-      const isMyTokenExpired = isExpired(auth);
+      
 
       id = myDecodedToken.user.id;
       setauth(id);

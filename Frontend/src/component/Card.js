@@ -15,7 +15,7 @@ export default function Card(props) {
     setcredentials({...credentials,[event.target.name]:event.target.value})   
     const index= optionsArray.indexOf(credentials.Options) 
     console.log(index)
-    if(index==-1) {   
+    if(index===-1) {   
       console.log("now")  
       console.log(priceArray[index+1])
       setprice(priceArray[index+1])  

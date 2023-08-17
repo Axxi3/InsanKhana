@@ -1,6 +1,6 @@
 import React from 'react'
 import food from './Food.png'
-export default function () {
+export default function Background() {
   return (
     <>   
     <div className="hero">      

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Leftinfo from "../component/Leftinfo";
-import { isExpired, decodeToken } from "react-jwt";
+import {  decodeToken } from "react-jwt";
 import Loading from "../component/Loading";  
 
 export default function ChangePass() { 
@@ -27,7 +27,7 @@ export default function ChangePass() {
             } else {
              
               const myDecodedToken = decodeToken(auth);
-              const isMyTokenExpired = isExpired(auth);  
+            
               
               id=myDecodedToken.user.id 
               setauth(id)   
@@ -87,7 +87,7 @@ if(respo.success){
       )
       }  
       { 
-      load==false && ( 
+      load===false && ( 
         <div className="form">  
    
         <form className="row g-3" onSubmit={SubmitHogaya}>   

@@ -56,7 +56,7 @@ function clicked(eaa) {
       </div> 
      
      <div className="cards"> 
-     {category =="All" &&
+     {category ==="All" &&
           fooditem.length !== 0 ? fooditem[0].map((data) => { 
             return( 
               <Card name={data.name} link={data.img} description={data.description} Array={data.options[0]} key={data._id} />

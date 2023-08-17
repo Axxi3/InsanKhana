@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PaymentCard from '../component/PaymentCard'
 import Leftinfo from '../component/Leftinfo'  
-import { isExpired, decodeToken } from "react-jwt";
+import {  decodeToken } from "react-jwt";
 import NotwrotePaymentinfo from '../component/NotwrotePaymentinfo'
 
 export default function Payment() {    
@@ -10,7 +10,6 @@ export default function Payment() {
  
   useEffect(() => {
     let auth = localStorage.getItem('authToken');  
-    const storedCartData = JSON.parse(localStorage.getItem('cart'));
     // console.log(storedCartData)
 
     if (auth === null) {
@@ -18,7 +17,6 @@ export default function Payment() {
     } else {
     
       const myDecodedToken = decodeToken(auth);
-      const isMyTokenExpired = isExpired(auth);  
       // console.log(myDecodedToken)   
       // console.log(auth)
       // console.log(isMyTokenExpired)  
@@ -26,7 +24,7 @@ export default function Payment() {
         // console.log(myDecodedToken.user.id)  
           cardExists(myDecodedToken.user.id)
       }
-    } }, []);
+    } });
   const cardExists= async (id)=>{ 
     const respo= await fetch ("https://insankhana.onrender.com/getcard/"+id,{ 
     method:"GET"
@@ -47,7 +45,7 @@ export default function Payment() {
      <Leftinfo/> 
      <div className="rightforparentcart addressform"> 
      {
-      Exist==false && (
+      Exist===false && (
         <NotwrotePaymentinfo />
       )
      } 

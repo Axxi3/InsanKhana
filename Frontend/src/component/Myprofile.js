@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
+
 import Cart from './Cart';
 import Leftinfo from './Leftinfo';
 
@@ -32,7 +32,7 @@ export default function MyProfile() {
 
     const change=(e,price)=>{   
       console.log(price)
-      if(e==0){   
+      if(e===0){   
         setTotalPrice(parseInt(totalPrice)-parseInt(price))
       } 
       else {   

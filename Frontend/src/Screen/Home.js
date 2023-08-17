@@ -3,7 +3,6 @@ import Navbar from '../component/Navbar';
 import Background from '../component/Background';
 import Trust from '../component/Trust';
 import Fooditems from '../component/Fooditems';
-import Footer from '../component/Footer';
 
 export default function Home() {
   const [login, setLogin] = useState(false);
@@ -19,7 +18,7 @@ console.log(auth)
       console.log(auth); 
       // This will show the previous value of login (useState is asynchronous)
     }
-  }, []); // Empty dependency array means this effect runs only once on mount
+  }, [login]); // Empty dependency array means this effect runs only once on mount
   
   return (
     <>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
  
 import { NavLink } from 'react-router-dom';
-import { useJwt,isExpired, decodeToken } from "react-jwt";
+import {  decodeToken } from "react-jwt";
 
 export default function Leftinfo() {    
     const [login, setLogin] = useState(false);
@@ -23,7 +23,7 @@ export default function Leftinfo() {
       }
       useEffect(() => {
         let auth = localStorage.getItem('authToken');  
-        const storedCartData = JSON.parse(localStorage.getItem('cart'));
+        // const storedCartData = JSON.parse(localStorage.getItem('cart'));
         // console.log(storedCartData)
     
         if (auth === null) {
@@ -32,7 +32,7 @@ export default function Leftinfo() {
         } else {
           setLogin(true);  
           const myDecodedToken = decodeToken(auth);
-          const isMyTokenExpired = isExpired(auth);  
+          // const isMyTokenExpired = isExpired(auth);  
           // console.log(myDecodedToken)   
           // console.log(auth)
           // console.log(isMyTokenExpired)  
@@ -43,7 +43,7 @@ export default function Leftinfo() {
         }  
        
     
-      }, []); // Empty dependency array means this effect runs only once on mount
+      }, [login]); // Empty dependency array means this effect runs only once on mount
     
     
   return (

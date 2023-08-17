@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Leftinfo from '../component/Leftinfo'
-import { isExpired, decodeToken } from "react-jwt";
+import { decodeToken } from "react-jwt";
 import Loading from '../component/Loading';
 export default function Billingaddress() {    
   const [login, setLogin] = useState(false);  
@@ -53,7 +53,7 @@ export default function Billingaddress() {
     } else {
       setLogin(true);  
       const myDecodedToken = decodeToken(auth);
-      const isMyTokenExpired = isExpired(auth);  
+     
       
       id=myDecodedToken.user.id 
       setauth(id)
@@ -64,7 +64,7 @@ export default function Billingaddress() {
     }    
     console.log("fhfhf",id)
     setdata(id)
-  },[])
+  },[login])
 
 
 

@@ -15,9 +15,9 @@ export default function Cart(props) {
       useEffect(() => {
         console.log('Updated quantity:', quantity);
         setprice(props.price * quantity);
-      }, [quantity]);
+      }, [props.price,quantity]);
       const minus = () => {  
-        if(quantity==1){ 
+        if(quantity===1){ 
           setprice(props.price) 
           return;
         } 

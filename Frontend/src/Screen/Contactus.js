@@ -23,7 +23,7 @@ export default function Contactus() {
         
         // This will show the previous value of login (useState is asynchronous)
       }
-    }, []); // Empty dependency array means this effect runs only once on mount  
+    }, [login]); // Empty dependency array means this effect runs only once on mount  
 
     const changeValue=(event)=> { 
         setcredentials({...credentials,[event.target.name]:event.target.value})  
