@@ -7,7 +7,6 @@ export default function Loading() {
   return (
     <div>   
       <img src={loader} alt="loading" className='Loader' />
-\
 
     </div>
   )
