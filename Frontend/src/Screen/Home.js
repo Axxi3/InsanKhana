@@ -3,10 +3,9 @@ import Navbar from '../component/Navbar';
 import Background from '../component/Background';
 import Trust from '../component/Trust';
 import Fooditems from '../component/Fooditems';  
-import Alter from "../component/Alert"
-import { useNavigate } from 'react-router-dom';
-export default function Home(props) {  
-  const Navigate=useNavigate()
+
+export default function Home() {  
+ 
   const [login, setLogin] = useState(false);
    
   useEffect(() => {
@@ -20,23 +19,15 @@ console.log(auth)
       console.log(auth); 
       // This will show the previous value of login (useState is asynchronous)
     }   
-    console.log("This is orderrrrrrrrrr "+ props.order)  
+    
   }, [login]); // Empty dependency array means this effect runs only once on mount
     
-  useEffect(()=>{ 
-    if(props.order){ 
-Navigate("/")
-    }
-  })
+
   
   return (   
     <>  
 
-    {
-      props.order ===true && ( 
-        <Alter message="Order Confirmed, Enjoy your order"/>
-      )
-    }
+   
       <Navbar login={login}/>
       <Background />
       <Trust />
