@@ -32,7 +32,7 @@ console.log(auth)
       <Background />
       <Trust />
       <Fooditems />  
-      
+     
     </>
   );
 }

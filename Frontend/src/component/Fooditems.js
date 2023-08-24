@@ -1,7 +1,8 @@
  import React, { useState, useEffect } from 'react';
 import MyButton from './MyButton';
 import Card from './Card';  
-import Loading from './Loading';
+import Loading from './Loading';  
+import Footer from '../component/Footer';
 export default function Fooditems() {    
   const [category,setcategpry]=useState("All")
   const [food,setfood]=useState([])  
@@ -78,7 +79,8 @@ function clicked(eaa) {
             );
           }) : <div></div>
         }
-     </div>
+     </div>  
+     <Footer/>
     </div>
   );
 }
