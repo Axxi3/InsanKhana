@@ -10,7 +10,7 @@ import Signup from "./Screen/Signup";
 import Newuser from "./Screen/Newuser"
 import Aboutus from "./Screen/Aboutus";
 import Contactus from "./Screen/Contactus";
-
+import OrderConfirm from "./component/OrderConfirmed"
 import MyProfile from "./component/Myprofile";
 import Billingaddress from "./Screen/Billingaddress";
 import Payment from "./Screen/Payment";
@@ -28,7 +28,8 @@ function App() {
   <Route exact path="/cart" element={<MyProfile/>}/>  
   <Route exact path="/address" element={<Billingaddress/>}/>    
   <Route exact path="/pay" element={<Payment/>}/>  
-  <Route exact path="/changepassword" element={<ChangePass/>}/>
+  <Route exact path="/changepassword" element={<ChangePass/>}/>  
+  <Route exact path="/orderconfirm" element={<OrderConfirm/>}/>
   </Routes>  
  
   </Router>

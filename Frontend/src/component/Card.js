@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export default function Card(props) {      
- 
+  const [buttonClicked, setButtonClicked] = useState(false);
   const [credentials,setcredentials]=useState({
     Options:"half" , 
     
@@ -23,7 +23,7 @@ export default function Card(props) {
     else { 
       setprice(priceArray[index])  
     }
-   
+   setButtonClicked(false)
     }  
     // const optionsArray = [""];
 
@@ -56,7 +56,9 @@ export default function Card(props) {
       cartItems.push(item);
     
       // Store the updated cart array back in local storage
-      localStorage.setItem("cart", JSON.stringify(cartItems));
+      localStorage.setItem("cart", JSON.stringify(cartItems));  
+
+      setButtonClicked(true)
     };
     
     
@@ -79,7 +81,7 @@ export default function Card(props) {
     </select>   
     <h3>{price}</h3>
   </div>    
-  <button type="button" className="btn btn-outline-primary orderwidth" onClick={addtocart}>Add to cart</button>
+  <button type="button" className="btn btn-outline-primary orderwidth" onClick={addtocart}>{buttonClicked ? 'Added to cart' : 'Add to cart'}</button>
   </div>
 </div>
      </div>

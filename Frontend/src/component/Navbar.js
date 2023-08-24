@@ -36,8 +36,14 @@ export default function Navbar (props) {
     <div> 
     <ul className='Navlist'>
         <li className='Active' ><NavLink  exact to="/">Home</NavLink> </li>
-        <li ><NavLink  exact to="/about">About</NavLink> </li>
-        <li ><NavLink  exact to="/cart">My Account</NavLink> </li>
+        <li ><NavLink  exact to="/about">About</NavLink> </li>  
+        { 
+        login && ( 
+          <li ><NavLink  exact to="/cart">My Account</NavLink> </li>
+        )
+        
+        }
+       
         <li ><NavLink  exact to="/contactus">Contact us</NavLink> </li>    
         
         { !login && (

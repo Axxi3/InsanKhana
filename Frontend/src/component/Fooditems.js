@@ -1,12 +1,14 @@
  import React, { useState, useEffect } from 'react';
 import MyButton from './MyButton';
-import Card from './Card';
+import Card from './Card';  
+import Loading from './Loading';
 export default function Fooditems() {    
   const [category,setcategpry]=useState("All")
   const [food,setfood]=useState([])  
   const [fooditem,setfooditem]=useState([])   
-
-  const  getfoodcategory= async ()=> { 
+  const [dataloaded,setdataloaded]=useState(true)
+  const  getfoodcategory= async ()=> {   
+    setdataloaded(false)
     let foodCategory=await fetch(`https://insankhana.onrender.com/getcategory`,{ 
     method:"GET"
   })  
@@ -24,7 +26,8 @@ export default function Fooditems() {
   })  
   fooditem=await fooditem.json()  
   console.log(fooditem)  
-  setfooditem(fooditem)
+  setfooditem(fooditem)   
+setdataloaded(true)
   }   
 
   useEffect(()=> { 
@@ -45,9 +48,14 @@ function clicked(eaa) {
   return (
     <div className="light">
       <h1 className="trusted text ">Food items</h1>   
-      <div className="slider"> 
+      <div className="slider">   
+      { 
+        dataloaded ===false && ( 
+          <Loading/>
+        )
+      }   
       {
-          food.length !== 0 ? food[0].map((data) => { 
+         dataloaded && food.length !== 0 ? food[0].map((data) => { 
             return(  
               <MyButton CategoryName={data.CategoryName}  key={data._id} click={clicked} active={category}/>
             );
